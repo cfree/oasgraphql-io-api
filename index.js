@@ -1,5 +1,4 @@
 const express = require('express');
-const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql')
 const { createGraphQlSchema } = require('openapi-to-graphql');
@@ -38,8 +37,4 @@ app.post('/convert', async (req, res, next) => {
   }
 });
 
-module.exports.handler = serverless(app);
-
-if (process.env.NODE_ENV === 'development') {
-  app.listen(4001, () => console.log('App listening on port 4001!'));
-}
+app.listen(4001, () => console.log('App listening on port 4001!'));
