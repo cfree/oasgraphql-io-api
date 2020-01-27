@@ -5,7 +5,7 @@ const { createGraphQlSchema } = require('openapi-to-graphql');
 const uuidv4 = require('uuid/v4');
 
 let memorySchemas = {};
-const port = process.env.NODE_ENV === 'development' ? 4001 : 80;
+const port = process.env.PORT || 4001;
 
 const app = express();
 const jsonParser = bodyParser.json();
