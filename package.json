@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production node .",
+    "dev": "NODE_ENV=development node ."
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0",
+    "openapi-to-graphql": "^1.7.0",
+    "serverless-http": "^2.3.1",
+    "uuid": "^3.4.0"
+  }
+}
