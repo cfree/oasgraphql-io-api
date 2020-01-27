@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production node .",
+    "start": "node .",
     "dev": "NODE_ENV=development node ."
   },
   "dependencies": {
