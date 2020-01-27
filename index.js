@@ -5,6 +5,7 @@ const { createGraphQlSchema } = require('openapi-to-graphql');
 const uuidv4 = require('uuid/v4');
 
 let memorySchemas = {};
+const port = process.env.NODE_ENV === 'development' ? 4001 : 80;
 
 const app = express();
 const jsonParser = bodyParser.json();
@@ -37,4 +38,4 @@ app.post('/convert', async (req, res, next) => {
   }
 });
 
-app.listen(4001, () => console.log('App listening on port 4001!'));
+app.listen(port, () => console.log(`App listening on port ${port}!`));
