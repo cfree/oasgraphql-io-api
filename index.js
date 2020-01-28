@@ -26,7 +26,7 @@ app.post('/convert', async (req, res, next) => {
     const id = uuidv4();
     const results = {
       id,
-      report: data.report,
+      ...data,
     }
 
     memorySchemas = {
