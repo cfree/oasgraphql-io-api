@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql')
 const { createGraphQlSchema } = require('openapi-to-graphql');
 const uuidv4 = require('uuid/v4');
+const cors = require('cors');
 
 let memorySchemas = {};
 const port = process.env.PORT || 4001;
@@ -10,6 +11,7 @@ const port = process.env.PORT || 4001;
 const app = express();
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
+app.use(cors());
 
 app.use('/graphql/:schemaId', (req, res) => graphqlHTTP({
   schema: memorySchemas[req.params.schemaId],
